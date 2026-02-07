@@ -1,0 +1,180 @@
+play_mp3_url:
+  name: Play MP3 (URL)
+  description: Send a LaMetric notification that plays an MP3 from a URL.
+  fields:
+    device_id:
+      name: Device
+      description: Target LaMetric device (from this integration).
+      required: false
+      selector:
+        device:
+          integration: lametric_v2
+    text:
+      name: Text
+      description: Text to show on the display.
+      required: true
+      selector:
+        text: {}
+    mp3_url:
+      name: MP3 URL
+      description: Publicly reachable URL to an MP3 file (reachable by the LaMetric device).
+      required: true
+      selector:
+        text: {}
+    icon:
+      name: Icon
+      description: LaMetric icon id (e.g. i3092).
+      required: false
+      default: i3092
+      selector:
+        text: {}
+    cycles:
+      name: Cycles
+      description: How many times to loop frames.
+      required: false
+      default: 1
+      selector:
+        number:
+          min: 1
+          max: 10
+          step: 1
+          mode: box
+    priority:
+      name: Priority
+      description: Notification priority (e.g. info, warning, critical).
+      required: false
+      default: info
+      selector:
+        select:
+          options:
+            - info
+            - warning
+            - critical
+
+dismiss_current:
+  name: Dismiss Current Notification
+  description: Dismiss the currently visible notification on the LaMetric.
+  fields:
+    device_id:
+      name: Device
+      required: false
+      selector:
+        device:
+          integration: lametric_v2
+
+dismiss_all:
+  name: Dismiss All Notifications
+  description: Clear the notification queue on the LaMetric.
+  fields:
+    device_id:
+      name: Device
+      required: false
+      selector:
+        device:
+          integration: lametric_v2
+
+play_tts:
+  name: Play TTS (via HA)
+  description: Generate TTS using a Home Assistant TTS entity and play it as MP3 on LaMetric.
+  fields:
+    device_id:
+      name: Device
+      required: false
+      selector:
+        device:
+          integration: lametric_v2
+    tts_entity_id:
+      name: TTS entity
+      description: TTS entity_id, e.g. tts.google_ai_tts.
+      required: false
+      selector:
+        entity:
+          domain: tts
+    message:
+      name: Message
+      required: true
+      selector:
+        text: {}
+    voice:
+      name: Voice
+      description: Voice option passed to tts.speak (integration-specific).
+      required: false
+      selector:
+        text: {}
+    icon:
+      name: Icon
+      required: false
+      default: i3092
+      selector:
+        text: {}
+    priority:
+      name: Priority
+      required: false
+      default: info
+      selector:
+        select:
+          options:
+            - info
+            - warning
+            - critical
+
+show_setpoint_change:
+  name: Show Setpoint Change
+  description: Show an animated arrow and the new temperature setpoint (Celsius).
+  fields:
+    device_id:
+      name: Device
+      required: false
+      selector:
+        device:
+          integration: lametric_v2
+    temperature_c:
+      name: Temperature (C)
+      required: true
+      selector:
+        number:
+          min: -10
+          max: 40
+          step: 0.1
+          mode: box
+    direction:
+      name: Direction
+      description: up or down
+      required: true
+      selector:
+        select:
+          options:
+            - up
+            - down
+    arrow_up_icon:
+      name: Arrow Up Icon
+      description: LaMetric icon id for the up arrow.
+      required: false
+      selector:
+        text: {}
+    arrow_down_icon:
+      name: Arrow Down Icon
+      description: LaMetric icon id for the down arrow.
+      required: false
+      selector:
+        text: {}
+    cycles:
+      name: Cycles
+      required: false
+      default: 2
+      selector:
+        number:
+          min: 1
+          max: 10
+          step: 1
+          mode: box
+    priority:
+      name: Priority
+      required: false
+      default: info
+      selector:
+        select:
+          options:
+            - info
+            - warning
+            - critical

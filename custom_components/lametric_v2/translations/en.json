@@ -1,0 +1,21 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "LaMetric Time (v2)",
+        "description": "Configure a LaMetric device using the local Device API v2.",
+        "data": {
+          "host": "Host / IP",
+          "api_key": "API key",
+          "verify_ssl": "Verify SSL certificate",
+          "base_url": "Home Assistant base URL (reachable by LaMetric)",
+          "default_tts_entity_id": "Default TTS entity_id"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the device.",
+      "invalid_auth": "Invalid API key."
+    }
+  }
+}

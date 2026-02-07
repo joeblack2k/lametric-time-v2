@@ -1,0 +1,12 @@
+{
+  "domain": "lametric_v2",
+  "name": "LaMetric Time (Device API v2)",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://docs.lametric.com/en/latest/reference-docs/device-endpoints.html",
+  "integration_type": "device",
+  "iot_class": "local_push",
+  "requirements": [],
+  "version": "0.1.0"
+}
+

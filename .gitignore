@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.DS_Store
+._*
+.lametric_probe/
+
+# Home Assistant
+.storage/
+home-assistant.log*
+
+# Local dev
+.vscode/
+.idea/
